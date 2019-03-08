@@ -240,6 +240,13 @@ public class ATMUI extends JFrame
 						if (Integer.parseInt(rows.getString("balance")) >= cashToWithdraw)
 						{
 							 atmProxy.requestCash(cashToWithdraw);
+							 int remainingBalance = Integer.parseInt(rows.getString("balance")) - cashToWithdraw;
+							 String updateBalance = "update account set balance = " + Integer.toString(remainingBalance)  + " where account_number = " + tf_accountNo.getText();
+							 System.out.println(updateBalance);
+							 sqlState.executeUpdate(updateBalance);
+							 lb_balance.setText("Your account balance is: " + Integer.toString(remainingBalance));
+							 
+
 						}
 						else 
 						{
