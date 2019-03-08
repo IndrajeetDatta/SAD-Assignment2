@@ -21,28 +21,27 @@ public class HasCard implements ATMState {
 		
 	}
 
-	public void requestCash(int cashToWithdraw) {
+	public boolean requestCash(int cashToWithdraw) {
 		
 		System.out.println("You have not entered your PIN");
-		
-		
+		return false;
 	}
 
-	public void insertPin(int pinEntered) {
+	public void insertPin() {
 		
-		if(pinEntered == 1234){
+		
 			
 			System.out.println("You entered the correct PIN");
 			atmMachine.correctPinEntered = true;
 			atmMachine.setATMState(atmMachine.getHasPin());
 			
-		} else {
+//		} else {
+//			
+//			System.out.println("You entered the wrong PIN");
+//			atmMachine.correctPinEntered = false;
+//			System.out.println("Your card is ejected");
+//			atmMachine.setATMState(atmMachine.getNoCardState());
 			
-			System.out.println("You entered the wrong PIN");
-			atmMachine.correctPinEntered = false;
-			System.out.println("Your card is ejected");
-			atmMachine.setATMState(atmMachine.getNoCardState());
-			
-		}	
+		//}	
 	}	
 }

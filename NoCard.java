@@ -12,6 +12,7 @@ public class NoCard implements ATMState {
 		
 		System.out.println("Please enter your pin");
 		atmMachine.setATMState(atmMachine.getYesCardState());
+		System.out.println(atmMachine.getATMState());
 		
 	}
 
@@ -21,13 +22,14 @@ public class NoCard implements ATMState {
 		
 	}
 
-	public void requestCash(int cashToWithdraw) {
+	public boolean requestCash(int cashToWithdraw) {
 		
 		System.out.println("You have not entered your card");
+		return false;
 		
 	}
 
-	public void insertPin(int pinEntered) {
+	public void insertPin() {
 		
 		System.out.println("You have not entered your card");
 		

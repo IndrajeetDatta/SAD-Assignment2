@@ -5,10 +5,16 @@ public class ATMProxy implements GetATMData {
 
 	// Allows the user to access getATMState in the 
 	// Object ATMMachine
+	ATMMachine realATMMachine = new ATMMachine();
+	ATMState hasCard;     
+	ATMState noCard;
+	ATMState hasCorrectPin;
+	ATMState atmOutOfMoney;
+	
+	ATMState atmState;
 	
 	public ATMState getATMState() {
 		
-		ATMMachine realATMMachine = new ATMMachine();
 		
 		return realATMMachine.getATMState();
 	}
@@ -18,33 +24,33 @@ public class ATMProxy implements GetATMData {
 	
 	public int getCashInMachine() {
 		
-		ATMMachine realATMMachine = new ATMMachine();
 		
 		return realATMMachine.getCashInMachine();
 		
 	}
 	
 	public void insertCard() {
-		ATMMachine realATMMachine = new ATMMachine();
 		
 		realATMMachine.insertCard();
 	}
 	
 	public void ejectCard() {
-		ATMMachine realATMMachine = new ATMMachine();
 		realATMMachine.ejectCard();
 	}
 	
-	public void insertPin(int pinEntered)
+	public void insertPin()
 	{
-		ATMMachine realATMMachine = new ATMMachine();
-		realATMMachine.insertPin(pinEntered);
+		realATMMachine.insertPin();
 	}
 	
 	public void requestCash(int cashToWithdraw)
 	{
-		ATMMachine realATMMachine = new ATMMachine();
 		realATMMachine.requestCash(cashToWithdraw);
 	}
+	public ATMState getYesCardState() { return realATMMachine.hasCard; }
+	public ATMState getNoCardState() { return realATMMachine.noCard; }
+	public ATMState getHasPin() { return realATMMachine.hasCorrectPin; }
+	public ATMState getNoCashState() { return realATMMachine.atmOutOfMoney; }
+	
 	
 }

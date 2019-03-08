@@ -22,13 +22,14 @@ public class NoCash implements ATMState {
 		
 	}
 
-	public void requestCash(int cashToWithdraw) {
+	public boolean requestCash(int cashToWithdraw) {
 		
 		System.out.println("We don't have any money");
+		return false;
 		
 	}
 
-	public void insertPin(int pinEntered) {
+	public void insertPin() {
 		
 		System.out.println("We don't have any money");
 		

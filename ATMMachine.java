@@ -57,9 +57,9 @@ public class ATMMachine implements GetATMData{
 		
 	}
 
-	public void insertPin(int pinEntered){
+	public void insertPin(){
 		
-		atmState.insertPin(pinEntered);
+		atmState.insertPin();
 		
 	}
 	

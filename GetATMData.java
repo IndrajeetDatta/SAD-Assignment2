@@ -10,7 +10,12 @@ public interface GetATMData
 	
 	public void ejectCard();
 	
-	public void insertPin(int pinEntered);
+	public void insertPin();
 	
 	public void requestCash(int cashToWithdraw);
+	
+	public ATMState getYesCardState();
+	public ATMState getNoCardState();
+	public ATMState getHasPin();
+	public ATMState getNoCashState();
 }
